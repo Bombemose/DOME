@@ -5,14 +5,10 @@
  * @author Michael Kolling and David J. Barnes
  * @version 2008.03.30
  */
-public class CD
+public class CD extends Item
 {
-    private String title;
     private String artist;
     private int numberOfTracks;
-    private int playingTime;
-    private boolean gotIt;
-    private String comment;
 
     /**
      * Initialize the CD.
@@ -23,62 +19,34 @@ public class CD
      */
     public CD(String theTitle, String theArtist, int tracks, int time)
     {
-        title = theTitle;
+        super(theTitle, time);
         artist = theArtist;
         numberOfTracks = tracks;
-        playingTime = time;
-        gotIt = false;
-        comment = "<no comment>";
     }
 
     /**
-     * Enter a comment for this CD.
-     * @param comment The comment to be entered.
+     * @return The artist for this CD.
      */
-    public void setComment(String comment)
+    public String getArtist()
     {
-        this.comment = comment;
+        return artist;
     }
 
     /**
-     * @return The comment for this CD.
+     * @return The number of tracks on this CD.
      */
-    public String getComment()
+    public int getNumberOfTracks()
     {
-        return comment;
+        return numberOfTracks;
     }
-
+    
     /**
-     * Set the flag indicating whether we own this CD.
-     * @param ownIt true if we own the CD, false otherwise.
-     */
-    public void setOwn(boolean ownIt)
-    {
-        gotIt = ownIt;
-    }
-
-    /**
-     * @return true if we own a copy of this CD.
-     */
-    public boolean getOwn()
-    {
-        return gotIt;
-    }
-
-    /**
-     * Print details about this CD to the text terminal.
+     * Print details about this item to the text terminal.
      */
     public void print()
     {
-        System.out.print("CD: " + title + " (" + playingTime + " mins)");
-        if(gotIt) {
-            System.out.println("*");
-        }
-	else {
-            System.out.println();
-        }
+
         System.out.println("    " + artist);
-        System.out.println("    tracks: " + numberOfTracks);
-        System.out.println("    " + comment);
+        
     }
 }

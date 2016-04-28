@@ -6,13 +6,9 @@
  * @author Michael Kolling and David J. Barnes
  * @version 2008.03.30
  */
-public class DVD 
+public class DVD extends Item 
 {
-    private String title;
     private String director;
-    private int playingTime; // playing time of the main feature
-    private boolean gotIt;
-    private String comment;
 
     /**
      * Constructor for objects of class DVD
@@ -22,60 +18,25 @@ public class DVD
      */
     public DVD(String theTitle, String theDirector, int time)
     {
-        title = theTitle;
+        super(theTitle, time);
         director = theDirector;
-        playingTime = time;
-        gotIt = false;
-        comment = "<no comment>";
     }
 
     /**
-     * Enter a comment for this DVD.
-     * @param comment The comment to be entered.
+     * @return The director for this DVD.
      */
-    public void setComment(String comment)
+    public String getDirector()
     {
-        this.comment = comment;
+        return director;
     }
-
+    
     /**
-     * @return The comment for this DVD.
-     */
-    public String getComment()
-    {
-        return comment;
-    }
-
-    /**
-     * Set the flag indicating whether we own this DVD.
-     * @param ownIt true if we own the DVD, false otherwise.
-     */
-    public void setOwn(boolean ownIt)
-    {
-        gotIt = ownIt;
-    }
-
-    /**
-     * @return true if we own a copy of this DVD.
-     */
-    public boolean getOwn()
-    {
-        return gotIt;
-    }
-
-    /**
-     * Print details about this DVD to the text terminal.
+     * Print details about this item to the text terminal.
      */
     public void print()
     {
-        System.out.print("DVD: " + title + " (" + playingTime + " mins)");
-        if(gotIt) {
-            System.out.println("*");
-        }
-	else {
-            System.out.println();
-        }
+
         System.out.println("    " + director);
-        System.out.println("    " + comment);
+        
     }
 }
