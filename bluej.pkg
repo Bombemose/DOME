@@ -2,10 +2,10 @@
 dependency1.from=Database
 dependency1.to=Item
 dependency1.type=UsesDependency
-package.editor.height=281
-package.editor.width=404
-package.editor.x=386
-package.editor.y=364
+package.editor.height=293
+package.editor.width=407
+package.editor.x=380
+package.editor.y=135
 package.numDependencies=1
 package.numTargets=4
 package.showExtends=true

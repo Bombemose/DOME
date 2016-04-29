@@ -29,14 +29,15 @@ public class DVD extends Item
     {
         return director;
     }
-    
+
     /**
-     * Print details about this item to the text terminal.
+     * Print details of this DVD to the text terminal.
      */
     public void print()
     {
-
-        System.out.println("    " + director);
-        
+        System.out.println("DVD");
+        System.out.println("--------");
+        super.print();
+        System.out.println("    director: " + director);
     }
 }

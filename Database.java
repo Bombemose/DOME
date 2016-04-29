@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 /**
- * The database class provides a facility to store entertainment
- * item objects. A list of all items can be printed to the
+ * The database class provides a facility to store CD and video 
+ * objects. A list of all CDs and videos can be printed to the
  * terminal.
  * 
  * This version does not save the data to disk, and it does not
@@ -21,7 +21,6 @@ public class Database
     public Database()
     {
         items = new ArrayList<Item>();
-        populateDatabase();
     }
 
     /**
@@ -34,39 +33,14 @@ public class Database
     }
 
     /**
-     * Print a list of all currently stored items to the
+     * Print a list of all currently stored CDs and videos to the
      * text terminal.
      */
     public void list()
     {
-        for(Item item : items) {
+        for(Item item : items)
+        {
             item.print();
-            System.out.println();   // empty line between items
         }
-    }
-    
-    /**
-     * add default items to the database
-     */
-    private void populateDatabase() {
-        CD aCD;
-        DVD aDVD;
-        VideoGame aVideoGame;
-        
-        aCD = new CD("Brothers in Arms", "Dire Straits", 7, 73);
-        aCD.setComment("Min allerførste CD");
-        aCD.setOwn(true);
-        addItem(aCD);
-        
-        aCD = new CD("Converts in China", "Jean Michel Jarre", 12, 121);
-        aCD.setComment("Dobbelt CD");
-        aCD.setOwn(true);
-        addItem(aCD);
-        
-        aDVD = new DVD("The 6th sense", "M. Night Shaylabibam", 137);
-        addItem(aDVD);
-        
-        aVideoGame = new VideoGame("World of Warcraft", "PC", 10, 0);
-        addItem(aVideoGame);
     }
 }

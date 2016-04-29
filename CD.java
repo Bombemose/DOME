@@ -39,14 +39,17 @@ public class CD extends Item
     {
         return numberOfTracks;
     }
-    
+
     /**
-     * Print details about this item to the text terminal.
+     * Print details of this CD to the text terminal.
      */
     public void print()
     {
-
-        System.out.println("    " + artist);
         
+        System.out.println("CD");
+        System.out.println("--------");
+        super.print();
+        System.out.println("    " + artist);
+        System.out.println("    tracks: " + numberOfTracks);
     }
 }

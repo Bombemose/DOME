@@ -23,7 +23,7 @@ public class Item
         title = theTitle;
         playingTime = time;
         gotIt = false;
-        comment = "";
+        comment = "<no comment>";
     }
 
     /**
@@ -53,7 +53,7 @@ public class Item
     }
 
     /**
-     * @return true if we own a copy of this item.
+     * @return Information whether we own a copy of this item.
      */
     public boolean getOwn()
     {
@@ -61,19 +61,16 @@ public class Item
     }
 
     /**
-    * Print details about this item to the text terminal.
-    */
+     * Print details of this item to the text terminal.
+     */
     public void print()
     {
-        System.out.print("title: " + title);
-        /**
+        System.out.print(title + " (" + playingTime + " mins)");
         if(gotIt) {
             System.out.println("*");
         } else {
             System.out.println();
         }
         System.out.println("    " + comment);
-        */
     }
-    
 }
